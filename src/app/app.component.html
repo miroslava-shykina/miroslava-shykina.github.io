@@ -1,0 +1,66 @@
+<div class="box">
+  <div class="conteiner">
+    <h1>My phone book</h1>
+    <hr />
+    <input type="text" class="style-input" placeholder="search text goes here" [(ngModel)]="field"/>
+    <input type="button" value="Add user" class="button-1" (click)="addPhons()" />
+    <hr />
+  </div>
+  <div class="conteiner">
+    <table>
+      <thead class="thead">
+        <td>
+          <button  (click)="sort('asc')">First name &#9650;</button>
+          <button (click)="sort('dasc')">First name &#9660;</button>
+        </td>
+        <td>
+          <button  (click)="sort('asc2')">Last name &#9650;</button>
+          <button (click)="sort('dasc2')">Last name &#9660;</button>
+        </td>
+        <td>
+          <button  (click)="sort('asc3')">Number &#9650;</button>
+          <button (click)="sort('dasc3')">Number &#9660;</button>
+        </td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of arrayTask | sort:type | search: field; index as i">
+          <td>{{ task.firstName }}</td>
+          <td>{{ task.lastName }}</td>
+          <td>{{task.telNumber}}</td>
+          <td>
+            <input type="button" value="Edit" class="edit" (click)="editUser(i)" />
+          </td>
+          <td>
+            <input type="button" value="Delete" class="delete" (click)="deleteUser(i)" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal-wrapper" *ngIf="isAddBlockNewTel">
+    <div class="block-edit">
+      <div class="top-block-edit">
+        <h3>Add phone</h3>
+        <input type="button" value="×" class="btn-close" (click)="btnClose()">
+      </div>
+    <input type="text" class="input-edit" placeholder="first name goes here" [(ngModel)]="inputFName" />
+    <input type="text" class="input-edit" placeholder="second name goes here" [(ngModel)]="inputLName" />
+    <input type="text" class="input-edit" placeholder="number phone goes here" [(ngModel)]="inputTNum" />
+    <input type="button" value="Save" class="button-1" (click)="save()" />
+    </div>
+  </div>
+  <div class="modal-wrapper" *ngIf="isAddBlockNewTel2">
+    <div class="block-edit">
+      <div class="top-block-edit">
+        <h3>Add phone</h3>
+        <input type="button" value="×" class="btn-close" (click)="btnClose2()">
+      </div>
+  <input type=" text" class="input-edit" [(ngModel)]="inputFName2" />
+  <input type="text" class="input-edit" [(ngModel)]="inputLName2" />
+  <input type="text" class="input-edit" [(ngModel)]="inputTNum2" />
+  <input type="button" value="Save" class="button-1" (click)="save2()" />
+  </div>
+</div>
+</div>
