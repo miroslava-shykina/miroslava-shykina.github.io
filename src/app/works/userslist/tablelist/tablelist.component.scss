@@ -1,0 +1,116 @@
+.conteiner {
+    width: 1339px;
+    margin: 10px;
+    padding-left: 19px;
+}
+
+table {
+    border-spacing: 0 0;
+    color: black;
+}
+
+
+thead {
+    font-weight: bolder;
+}
+
+.thead {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    margin-top: 35px;
+    font-size: 18px;
+}
+
+tr {
+    text-align: left;
+    height: 50px;
+}
+
+tr:hover {
+    background-color: lightskyblue;
+    border: none;
+    border-spacing: 0 0;
+}
+
+input[placeholder] {
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+td {
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+
+.edit {
+    height: 45px;
+    width: 65px;
+    background-color: orange;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.edit:focus {
+    border: 4px solid rgba(255, 208, 0, 0.644);
+}
+
+.edit:active {
+    background-color: rgb(218, 143, 4);
+}
+
+.delete {
+    height: 42px;
+    width: 80px;
+    background-color: #ff0000b8;
+    border: none;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.block-edit {
+    width: 1339px;
+    height: 52px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-edit:hover {
+    background-color: lightskyblue;
+}
+
+.input-edit {
+    width: 200px;
+    height: 35px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid gray;
+}
+
+.input-edit:focus {
+    box-shadow: 0px 0px 0px 4px rgb(0, 140, 255, 40%);
+    outline: 1px solid rgb(0, 140, 255);
+}
+
+.button-1 {
+    height: 41px;
+    width: 180px;
+    background-color: rgb(6, 146, 6);
+    border: 2px solid rgb(5, 169, 5);
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    margin: 10px 10px;
+}
+
+.button-1:focus {
+    background-color: rgb(1, 126, 1);
+    border: none;
+    color: white;
+    border: 3px solid rgb(5, 185, 5);
+}

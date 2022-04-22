@@ -1,0 +1,45 @@
+<nav>
+  <div class="nav nav-tabs">
+    <div class="btn-last">Last works >>></div>
+    <button [routerLink]="[ '/works/cenzor' ]" routerLinkActive="active" class="nav-link" type="button">Cenzor</button>
+    <button [routerLink]="[ '/works/tasklist' ]" routerLinkActive="active" class="nav-link"type="button">Users</button>
+    <button [routerLink]="[ '/works/userslist' ]" routerLinkActive="active" class="nav-link" type="button">Task</button>
+    <button [routerLink]="[ '/home' ]" routerLinkActive="active" class="nav-link back-to" type="button">Back to >>> Home</button>
+  </div>
+</nav>
+<div class="box">
+  <div class="conteiner">
+    <p>Login</p>
+    <input type="text" class="style-input" placeholder="Enter login" [(ngModel)]="login" [class.value]="isValue">
+    <p>Password</p>
+    <input type="password" class="style-input" placeholder=" Enter password" [(ngModel)]="pass" [class.value]="isValue">
+    <p>Email address</p>
+    <input type="email" class="style-input" placeholder="Enter email" [(ngModel)]="email" [class.value]="isValue">
+    <input *ngIf="!editStatus" type="button" value="Add user" class="button-1" (click)="addUser()">
+    <input *ngIf="editStatus" type="button" value="Edit user" class="button-1" name="editUp" (click)="saveEditUser()">
+  </div>
+  <div class="conteiner">
+    <table class="thead">
+      <thead>
+        <td class="width-1">#</td>
+        <td class="width-2">Login</td>
+        <td class="width-2">Password</td>
+        <td class="width-2">Email</td>
+        <td class="width-2">Edit</td>
+        <td class="width-2">Delete</td>
+      </thead>
+    </table>
+    <table class="tr-style">
+      <tbody class="tbody">
+        <tr class="tr" *ngFor="let user of arrayUsers; index as i">
+          <td class="width-1">{{i+1}}</td>
+          <td class="width-2">{{user.login}}</td>
+          <td class="width-2">{{user.pass}}</td>
+          <td class="width-2">{{user.email}}</td>
+          <td class="width-2"><input type="button" value="Edit" class="edit" (click)="editUser(i)"></td>
+          <td class="width-2"><input type="button" value="Delete" class="delete" (click)="deleteUser(i)"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

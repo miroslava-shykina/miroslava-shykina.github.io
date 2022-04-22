@@ -1,0 +1,26 @@
+<router-outlet>
+  <div class="container">
+    <div class="card">
+      <img class="card-img-top img-1">
+      <div class="card-body">
+        <h5 class="card-title">Angular lisr prohibited works</h5>
+        <a [routerLink]="[ '/works/cenzor' ]" routerLinkActive="active" class="btn btn-primary">ditails</a>
+
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top img-2">
+      <div class="card-body">
+        <h5 class="card-title">Angular users list</h5>
+        <a [routerLink]="[ '/works/tasklist' ]" routerLinkActive="active" class="btn btn-primary">ditails</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top img-3">
+      <div class="card-body">
+        <h5 class="card-title">Angular task list</h5>
+        <a [routerLink]="[ '/works/userslist' ]" routerLinkActive="active" class="btn btn-primary">ditails</a>
+      </div>
+    </div>
+  </div>
+</router-outlet>

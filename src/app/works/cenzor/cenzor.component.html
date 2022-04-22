@@ -1,0 +1,20 @@
+<nav>
+  <div class="nav nav-tabs">
+    <div class="btn-last">Last works >>></div>
+    <button [routerLink]="[ '/works/cenzor' ]" routerLinkActive="active" class="nav-link" type="button">Cenzor</button>
+    <button [routerLink]="[ '/works/tasklist' ]" routerLinkActive="active" class="nav-link"type="button">Users</button>
+    <button [routerLink]="[ '/works/userslist' ]" routerLinkActive="active" class="nav-link" type="button">Task</button>
+    <button [routerLink]="[ '/home' ]" routerLinkActive="active" class="nav-link back-to" type="button">Back to >>> Home</button>
+  </div>
+</nav>
+<div class="container">
+  <div class="bad-words">Bad words: <span class="words">{{firstWords}}</span></div>
+  <input type="text" class="input-word" [placeholder]="placeholder" [class.value]="isValue" [class.novalue]="isNoValue"
+    [(ngModel)]="badWord">
+  <input type="button" value="Add" class="btn-add" [class.value]="isValue" (click)="addBadWords()">
+  <input type="button" value="Reset" class="btn-reset" (click)="firstWords = ''">
+  <textarea class="textarea" [class.value]="isValueTextArea" [class.novalue]="isNoValueTextArea"
+    [placeholder]="placeholder2" (input)="btnclouseColor = 'blue'" [(ngModel)]="myTextarea"></textarea>
+  <input type="button" class="btn-close" value="×" [ngClass]="{blue: btnclouseColor === 'blue'}" (click)="clienText()">
+  <input type="button" value="Cenzor" class="btn-cenzor" (click)="cenzor()">
+</div>
