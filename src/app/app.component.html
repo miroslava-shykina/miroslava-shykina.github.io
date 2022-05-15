@@ -93,6 +93,7 @@
           Close
         </button>
         <button
+        [disabled]="!email1 || !password1"
           (click)="submitSingIn()"
           type="submit"
           class="btn btn-success"
@@ -167,6 +168,7 @@
           Close
         </button>
         <button
+        [disabled]="!userName2 || !email2 || !password2"
           (click)="submitSingUp()"
           type="submit"
           class="btn btn-primary"
