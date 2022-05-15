@@ -1,0 +1,94 @@
+<div class="container mt-4" *ngFor="let blog of postblog">
+  <div class="card">
+    <div class="w-100 d-flex flex-row align-items-center pe-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ blog.topic }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          <span>Post by:</span>
+          {{ blog.postedBy }}
+        </h6>
+        <p class="card-text">{{ blog.message }}</p>
+      </div>
+      <div>
+        <p class="p-4">&#9719; {{ blog.date | date: "hh:mm,dd.MM.yyyy" }}</p>
+      </div>
+    </div>
+    <div
+      *ngIf="postPublic(blog)"
+      class="w-100 d-flex justify-content-end pb-4 pe-4"
+    >
+      <button
+        (click)="btnEdit(blog)"
+        type="button"
+        class="btn btn-warning w-1"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal4"
+      >
+        Edit
+      </button>
+      <button (click)="btnDelete(blog)" type="button" class="btn btn-danger">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="exampleModal4"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel4"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel4">Sing Up</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Title:</p>
+        <div class="form-floating">
+          <input
+            type="text"
+            [(ngModel)]="titleName2"
+            name="titleName"
+            class="form-control"
+            placeholder="title"
+            id="titleName"
+          />
+          <label for="titleName">Title..</label>
+        </div>
+        <p>Text:</p>
+        <div class="form-floating">
+          <textarea
+            [(ngModel)]="textarea2"
+            name="textarea"
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="textarea"
+          ></textarea>
+          <label for="textarea">Text..</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          [disabled]="!titleName2 || !textarea2"
+          (click)="savePost()"
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
