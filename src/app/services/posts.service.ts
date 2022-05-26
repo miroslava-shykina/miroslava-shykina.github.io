@@ -1,65 +1,38 @@
 import { Injectable } from '@angular/core';
-import { IBlog } from '../interfaces/blogs/blog.interface';
-import { IUser } from '../interfaces/users/user.interface';
+import {
+  IBlogRequest,
+  IBlogResponse,
+} from '../interface/blog.interface';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostsService {
-  public idEdit!: number;
-  public date = new Date();
-  public userName!: string;
+  private url = environment.BACKEND_URL;
+  private api = { blogs: `${this.url}/blogs` };
 
-  public users: Array<IUser> = [
-    {
-      id: 1,
-      username: 'admin',
-      email: 'admin@gmail.com',
-      password: '1111',
-    },
-  ];
+  constructor(private http: HttpClient) {}
 
-  public blogs: Array<IBlog> = [
-    {
-      id: 1,
-      topic: 'First post',
-      postedBy: 'admin',
-      date: this.date,
-      message: 'Sing up to create your account and start to us Angular Blog',
-    },
-    {
-      id: 2,
-      topic: 'First post',
-      postedBy: 'roma',
-      date: this.date,
-      message: 'Sing up to create your account and start to us Angular Blog',
-    },
-  ];
-
-  constructor() {}
-  getPost(): Array<IBlog> {
-    return this.blogs;
+  getAll(): Observable<IBlogResponse[]> {
+    return this.http.get<IBlogResponse[]>(this.api.blogs);
   }
 
-  addPost(blog: IBlog): void {
-    this.blogs.push(blog);
+  getOne(id: number): Observable<IBlogResponse> {
+    return this.http.get<IBlogResponse>(`${this.api.blogs}/${id}`);
   }
 
-  getUser(): Array<IUser> {
-    return this.users;
+  create(discount: IBlogRequest): Observable<IBlogResponse> {
+    return this.http.post<IBlogResponse>(this.api.blogs, discount);
   }
 
-  addUser(user: IUser): void {
-    this.users.push(user);
+  update(discount: IBlogRequest, id: number): Observable<IBlogResponse> {
+    return this.http.patch<IBlogResponse>(`${this.api.blogs}/${id}`, discount);
   }
 
-  updatePost(blog: IBlog, id: number): void {
-    const index = this.blogs.findIndex((blog) => blog.id === id);
-    this.blogs.splice(index, 1, blog);
-  }
-
-  deletePost(id: number): void {
-    const index = this.blogs.findIndex((blog) => blog.id === id);
-    this.blogs.splice(index, 1);
+  delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.api.blogs}/${id}`);
   }
 }

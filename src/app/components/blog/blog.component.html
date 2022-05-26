@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <ng-container *ngIf="arrayBlogs.length > 0">
+      <div class="col" *ngFor="let blog of arrayBlogs">
+        <div class="card h-100">
+          <img
+            [src]="blog.image"
+            style="width: 100%"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <a href="">{{ blog.author }}</a>
+            <h5 class="card-title">{{ blog.title }}</h5>
+            <p class="card-text">{{ blog.text }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="arrayBlogs.length === 0">
+      <div class="card text-center bd-highlight w-100 row g-4">
+        <div class="card-body">
+          <h1 class="text-center">Post not addad yet</h1>
+        </div>
+        <div class="card-footer text-muted"></div>
+      </div>
+    </ng-container>
+  </div>
+</div>

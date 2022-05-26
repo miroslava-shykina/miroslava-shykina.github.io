@@ -1,0 +1,38 @@
+<div class="contain">
+  <div class="btn button">Blogs</div>
+  <div class="box">
+    <input type="text" class="style-input" placeholder="title here.." [(ngModel)]="title" />
+    <textarea name="textarea" class="textarea" placeholder="text here.." [(ngModel)]="text"></textarea>
+    <input type="email" class="style-input" placeholder="author here.." [(ngModel)]="author" />
+    <input *ngIf="!editStatus" type="button" value="Add" class="button-1 btn" (click)="addPost()" />
+    <input *ngIf="editStatus" type="button" value="Save edit" class="button-1 btn" name="editUp"
+      (click)="saveEditPost()" />
+
+    <table class="thead">
+      <thead>
+        <td>#</td>
+        <td>Title</td>
+        <td>Text</td>
+        <td>Author</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </thead>
+    </table>
+    <table class="tr-style">
+      <tbody class="tbody">
+        <tr *ngFor="let blog of arrayBlogs; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ blog.title }}</td>
+          <td>{{ blog.text }}</td>
+          <td>{{ blog.author }}</td>
+          <td>
+            <input type="button" value="Edit" class="edit btn" (click)="editPost(blog)" />
+          </td>
+          <td>
+            <input type="button" value="Delete" class="delete btn" (click)="deletePost(blog)" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
