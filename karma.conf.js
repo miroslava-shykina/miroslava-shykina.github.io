@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/lesson-5-router'),
+      dir: require('path').join(__dirname, './coverage/monosushi'),
       subdir: '.',
       reporters: [
         { type: 'html' },

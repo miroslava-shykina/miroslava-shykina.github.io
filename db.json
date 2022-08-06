@@ -1,3 +1,76 @@
 {
-  "blogs": []
+  "actions": [
+    {
+      "date": "2022-08-04T23:31:34.938Z",
+      "name": "Акції",
+      "title": "50% знижки на \"Рол тижня\"",
+      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню.\n“Рол тижня” ви можете знайти на головній сторінці нашого сайту.\nЗнижка діє при мінімальній сумі замовлення 200 грн.\nЦя акція не поєднується з іншими акціями.\n",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Frol-tyzhnya-3.0_page-0001-1-scaled-697x379.jpg?alt=media&token=587ada6f-dea1-48ed-ac87-c074248a1733",
+      "id": 1
+    },
+    {
+      "date": "2022-08-04T23:16:58.977Z",
+      "name": "Акції",
+      "title": "\"4+1=4\"",
+      "description": "\nЗамовляйте 5 ролів, а платіть за 4.\nЗамовляйте 10 ролів, а платіть за 8 і так далі.\nБезкоштовним вважається рол з найменшою вартістю.\nЦя акція не поєднується з іншими акціями.\n",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fpyatyj-v-podarunok-4.0_page-0001-scaled-697x379.jpg?alt=media&token=f4ba63af-1e0d-47a4-82da-eec6e13bcc79",
+      "id": 2
+    },
+    {
+      "date": "2022-08-04T23:18:52.957Z",
+      "name": "Акції",
+      "title": "Самовивіз",
+      "description": "\nЗабирайте своє замовлення самостійно та отримуйте такі переваги:\n\nЗапечені моно макі з лососем у подарунок.\nВідсутність мінімальної суми замовлення.\nЧас очікування на замовлення до 30 хв.\nДля отримання акційного ролу у подарунок зберігається умова мінімальної суми замовлення 200 грн.\nЦя акція не поєднується з іншими акціями.\n ",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fsamovyviz-3.0_page-0001-1-scaled-697x379.jpg?alt=media&token=47c2ac58-346d-4ede-8edc-01021e3e60d8",
+      "id": 3
+    },
+    {
+      "date": "2022-08-04T23:20:22.622Z",
+      "name": "Акції",
+      "title": "День народження з Моносуші",
+      "description": "\nПри оформленні замовлення вкажіть промокод “День народження” та отримайте “Запечений сет” безкоштовно до Вашого замовлення.\nТермін дії акції – День народження плюс один день до та після свята.\nЦя акція починає діяти при мінімальній сумі замовлення 750 грн.\nДля отримання подарунку іменинник має показати кур’єру оригінал документу, що підтверджує його дату народження.\nЦя акція не поєднується з іншими акціями.\n",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fden-narodzhennya-razom-z-monosushi_page-0001-scaled-697x379%20(1).jpg?alt=media&token=9655c736-80e1-4c1e-8ad6-0869c3ecd30e",
+      "id": 4
+    },
+    {
+      "date": "2022-08-04T23:22:14.486Z",
+      "name": "Акції",
+      "title": "Фотомарафон",
+      "description": "Розіграш проводиться в соціальній мережі – Instagram.\nЩоб стати учасником розіграшу варто зробити будь-який контент на задану тему з нашими ролами. Це може бути фото, відео, tik-tok.\nОбов’язково позначай нас на пості або сторі, щоб стати учасником марафону. ( інакше ми вас не побачимо )\nМарафон триває тиждень.\nПо закінченню марафону користувачі Instagram визначають переможця методом голосування.\nПереможець отримує Запечений сет в подарунок.\nДеталі актуального марафону уточнюйте в нашому Instagram: @monosushi.com.ua\nЦя акція не поєднується з іншими акціями.\n",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Ffotomarafon_page-0001-scaled-697x379.jpg?alt=media&token=84ab10c6-8f11-4637-af97-40b7e007adae",
+      "id": 5
+    }
+  ],
+  "categories": [
+    {
+      "name": "Акції",
+      "path": "Actions",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fnav-img-1.svg?alt=media&token=befcb8f5-c852-4a60-b4b2-6346f698defd",
+      "id": 1
+    },
+    {
+      "name": "Роли",
+      "path": "Rolls",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=62123c47-77b2-4fe7-ac52-08c8f64e1390",
+      "id": 2
+    },
+    {
+      "name": "Сети",
+      "path": "Sets",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=6e54cdfb-c360-419b-8223-d3529e732b3a",
+      "id": 3
+    },
+    {
+      "name": "Напої",
+      "path": "Drinks",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=94f4c121-2fe4-421b-ae88-bb728890ed98",
+      "id": 4
+    },
+    {
+      "name": "Соуси",
+      "path": "Sousi",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Ficon-sous.svg?alt=media&token=839700e4-7c50-42a5-902b-405c4433b290",
+      "id": 5
+    }
+  ]
 }
