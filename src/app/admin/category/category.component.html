@@ -1,7 +1,7 @@
 <div class="container admin-category">
   <div class="adding">
     <button (click)="adding()" class="btn-add-category" type="button">
-      ДОДАТИ КАТЕГОРІЮ
+      {{ !isAddet ? 'ЗАКРИТИ' : 'ДОДАТИ КАТЕГОРІЮ'}}
     </button>
     <div *ngIf="!isAddet">
       <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
@@ -13,7 +13,6 @@
           <div class="col mb-3">
             <input formControlName="path" name="path" type="text" class="form-control" placeholder="*Шлях"
               aria-label="title" />
-            <div class="invalid-feedback">Path is required</div>
           </div>
         </div>
         <ng-container *ngIf="!isUploaded">
@@ -60,7 +59,7 @@
           <button (click)="editCategory(category)" type="button">
             Редагувати
           </button>
-          <button  [disabled]="editStatus" type="button" (click)="deleteCategory(category)">
+          <button [disabled]="editStatus" type="button" (click)="deleteCategory(category)">
             Видалити
           </button>
         </td>

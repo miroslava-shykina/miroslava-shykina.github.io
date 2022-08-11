@@ -1,7 +1,7 @@
 <div class="container admin-action">
   <div class="adding">
     <button (click)="adding()" type="button" class="btn-add-action">
-      ДОДАТИ АКЦІЮ
+      {{ !isAddet ? 'ЗАКРИТИ' : 'ДОДАТИ КАТЕГОРІЮ'}}
     </button>
     <div *ngIf="!isAddet">
       <form [formGroup]="actionForm" (ngSubmit)="addAction()">

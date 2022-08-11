@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ICategoryResponse } from 'src/app/shared/interfaces/category/category.interface';
 import { CategoryService } from 'src/app/shared/services/category/category.service';
-import { deleteObject, getDownloadURL, percentage, ref, Storage, uploadBytesResumable } from '@angular/fire/storage';
-
-
+import { ImageService } from 'src/app/shared/services/image/image.service';
 
 @Component({
   selector: 'app-category',
@@ -12,7 +10,6 @@ import { deleteObject, getDownloadURL, percentage, ref, Storage, uploadBytesResu
   styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit {
-
   public adminCategories: Array<ICategoryResponse> = [];
   public isAddet = true;
   public editStatus = false;
@@ -20,18 +17,16 @@ export class CategoryComponent implements OnInit {
   public uploadPercent!: number;
   public isUploaded = false;
   private currentCategoryId = 0;
-  
 
   constructor(
     private fb: FormBuilder,
     private categoryService: CategoryService,
-    private storege: Storage
+    private imageService: ImageService
   ) {}
 
   ngOnInit(): void {
     this.initCategoryForm();
     this.loadCategories();
-    
   }
 
   initCategoryForm(): void {
@@ -39,13 +34,14 @@ export class CategoryComponent implements OnInit {
       name: [null, Validators.required],
       path: [null, Validators.required],
       imagePath: [
-        "https://monosushi.com.ua/wp-content/uploads/2022/07/rol-tyzhnya-3.0_page-0001-1-scaled-697x379.jpg",Validators.required,
+        'https://monosushi.com.ua/wp-content/uploads/2022/07/rol-tyzhnya-3.0_page-0001-1-scaled-697x379.jpg',
+        Validators.required,
       ],
     });
   }
 
   loadCategories(): void {
-    this.categoryService.getAll().subscribe(data => {
+    this.categoryService.getAll().subscribe((data) => {
       this.adminCategories = data;
     });
   }
@@ -56,7 +52,6 @@ export class CategoryComponent implements OnInit {
         .update(this.categoryForm.value, this.currentCategoryId)
         .subscribe(() => {
           this.loadCategories();
-          
         });
     } else {
       this.categoryService.create(this.categoryForm.value).subscribe(() => {
@@ -68,10 +63,8 @@ export class CategoryComponent implements OnInit {
     this.editStatus = false;
     this.isUploaded = false;
     this.uploadPercent = 0;
-   
   }
 
-  
   editCategory(category: ICategoryResponse): void {
     this.categoryForm.patchValue({
       name: category.name,
@@ -90,65 +83,39 @@ export class CategoryComponent implements OnInit {
     });
   }
 
-  upload(event:any) :void {
+  upload(event: any): void {
     const file = event.target.files[0];
-    this.uploadFile('images', file.name, file)
-    .then(data => {
-      this.categoryForm.patchValue({
-        imagePath: data
+    this.imageService
+      .uploadFile('images', file.name, file)
+      .then((data) => {
+        this.categoryForm.patchValue({
+          imagePath: data,
+        });
+        this.isUploaded = true;
+      })
+      .catch((err) => {
+        console.log(err);
       });
-      this.isUploaded = true;
-    })
-    .catch( err => {
-      console.log(err);
-    });
   }
 
-  async uploadFile(folder: string, name: string, file: File | null): Promise<string> {
-    const path = `${folder}/${name}`;
-    let url = '';
-  if(file){
-    try {
-      const storageRef = ref(this.storege, path);
-      const task = uploadBytesResumable(storageRef, file);
-      percentage(task).subscribe(data => {
-        this.uploadPercent = data.progress
-      });
-      await task;
-      url = await getDownloadURL(storageRef);
-      
-    }catch(e: any) {
-        console.error(e);
-      }
-  }else {
-    console.log('wrong format');
-  }
-  return Promise.resolve(url);
-  }
-
-
-  valueByControl(control: string) :string {
+  valueByControl(control: string): string {
     return this.categoryForm.get(control)?.value;
   }
 
-  deleteImage() : void {
-    const task = ref(this.storege, this.valueByControl('imagePath'));
-    deleteObject(task).then(() => {
-      console.log('File deleted');
-      this.isUploaded = false;
-      this.uploadPercent = 0;
-      this.categoryForm.patchValue({
-        imagePath: null
+  deleteImage(): void {
+    this.imageService
+      .deleteuploadFile(this.valueByControl('imagePath'))
+      .then(() => {
+        this.isUploaded = false;
+        this.uploadPercent = 0;
+        this.categoryForm.patchValue({ imagePath: null });
       })
-    })
+      .catch((err) => {
+        console.log('err');
+      });
   }
 
   adding(): void {
-    if (this.isAddet == true) {
-      this.isAddet = false;
-    } else {
-      this.isAddet = true;
-    }
+    this.isAddet =!this.isAddet;
   }
-
 }

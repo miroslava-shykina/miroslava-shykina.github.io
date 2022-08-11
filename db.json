@@ -39,6 +39,14 @@
       "description": "Розіграш проводиться в соціальній мережі – Instagram.\nЩоб стати учасником розіграшу варто зробити будь-який контент на задану тему з нашими ролами. Це може бути фото, відео, tik-tok.\nОбов’язково позначай нас на пості або сторі, щоб стати учасником марафону. ( інакше ми вас не побачимо )\nМарафон триває тиждень.\nПо закінченню марафону користувачі Instagram визначають переможця методом голосування.\nПереможець отримує Запечений сет в подарунок.\nДеталі актуального марафону уточнюйте в нашому Instagram: @monosushi.com.ua\nЦя акція не поєднується з іншими акціями.\n",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Ffotomarafon_page-0001-scaled-697x379.jpg?alt=media&token=84ab10c6-8f11-4637-af97-40b7e007adae",
       "id": 5
+    },
+    {
+      "date": "2022-08-11T16:07:25.177Z",
+      "name": "Акції",
+      "title": "акції",
+      "description": "опис",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fsamovyviz-3.0_page-0001-1-scaled-697x379.jpg?alt=media&token=0b4fa020-83f9-406c-9958-da04a001a159",
+      "id": 6
     }
   ],
   "categories": [
@@ -70,6 +78,78 @@
       "name": "Соуси",
       "path": "Sousi",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Ficon-sous.svg?alt=media&token=839700e4-7c50-42a5-902b-405c4433b290",
+      "id": 5
+    },
+    {
+      "name": "Акції",
+      "path": "action",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=331635a3-a224-4eba-815e-828423c73509",
+      "id": 6
+    }
+  ],
+  "products": [
+    {
+      "category": {
+        "name": "Роли",
+        "path": "Rolls",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=62123c47-77b2-4fe7-ac52-08c8f64e1390",
+        "id": 2
+      },
+      "name": "Сет Філадельфія",
+      "path": "Сет Філадельфія",
+      "ingredients": "Філадельфія: з лососем / в кунжуті / з тунцем / з вугрем",
+      "weight": "1070",
+      "price": 840,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Ffiladelfia.jpg?alt=media&token=e4c4efc5-ea89-4d20-a32e-98e66c516cc3",
+      "count": 1,
+      "id": 2
+    },
+    {
+      "category": {
+        "name": "Напої",
+        "path": "Drinks",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=94f4c121-2fe4-421b-ae88-bb728890ed98",
+        "id": 4
+      },
+      "name": "Сети",
+      "path": "Сет Філадельфія",
+      "ingredients": "Філадельфія: з лососем / в кунжуті / з тунцем / з вугрем",
+      "weight": "10",
+      "price": 780,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Ffiladelfia.jpg?alt=media&token=5ec2f6a8-8111-4497-880b-04ae105e9fdb",
+      "count": 1,
+      "id": 3
+    },
+    {
+      "category": {
+        "name": "Напої",
+        "path": "Drinks",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=94f4c121-2fe4-421b-ae88-bb728890ed98",
+        "id": 4
+      },
+      "name": "Сет Філадельфія",
+      "path": "Сет Філадельфія",
+      "ingredients": "Філадельфія: з лососем / в кунжуті / з тунцем / з вугрем",
+      "weight": "520",
+      "price": 54,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Ffiladelfia.jpg?alt=media&token=14ac0d63-f257-4f87-ac2f-fda86958ffff",
+      "count": null,
+      "id": 4
+    },
+    {
+      "category": {
+        "name": "Сети",
+        "path": "Sets",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=6e54cdfb-c360-419b-8223-d3529e732b3a",
+        "id": 3
+      },
+      "name": "Сети",
+      "path": "Сет Філадельфія",
+      "ingredients": "Філадельфія: з лососем / в кунжуті / з тунцем / з вугрем",
+      "weight": "520",
+      "price": 542,
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Ffiladelfia.jpg?alt=media&token=51d2fb97-863b-4fa6-b327-3b8de46383aa",
+      "count": 1,
       "id": 5
     }
   ]
