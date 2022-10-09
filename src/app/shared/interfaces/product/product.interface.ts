@@ -7,7 +7,8 @@ path: string;
 ingredients: string;
 weight: string;
 price: number;
-imgPath: string;
+imagePath: string;
+count: number;
 }
 
 export interface IProductResponse extends IProductRequest{

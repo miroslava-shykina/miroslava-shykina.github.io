@@ -10,7 +10,7 @@ import { ActionService } from 'src/app/shared/services/action/action.service';
 })
 export class ActionsInfoComponent implements OnInit {
 
-  public  action!: IActionResponse;
+  public currentAction!: IActionResponse;
 
   constructor(
     private actionService: ActionService,
@@ -18,14 +18,18 @@ export class ActionsInfoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void { 
+   
+    this.activatedRoute.data.subscribe(response => {
+      this.currentAction = response['actionInfo'];
+    })
+
     this.getOneAction();
   }
   
   getOneAction():void {
     const ACTION_ID = Number(this.activatedRoute.snapshot.paramMap.get('id'));
   this.actionService.getOne(ACTION_ID).subscribe(data => {
-    this.action = data;
-    console.log(data)
+    this.currentAction = data;
   });
 
   }

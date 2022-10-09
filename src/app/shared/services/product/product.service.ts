@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IProductRequest, IProductResponse } from '../../interfaces/product/product.interface';
@@ -19,9 +20,8 @@ export class ProductService {
   }
 
   getAllByCategory(name: string): Observable<IProductResponse[]> {
-    return this.http.get<IProductResponse[]>(`${this.api.products}?product.path=${name}`);
+    return this.http.get<IProductResponse[]>(`${this.api.products}?category.path=${name}`);
   }
-
 
   
   getOne(id: number): Observable<IProductResponse> {
@@ -39,5 +39,6 @@ export class ProductService {
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.api.products}/${id}`);
   }
+
 
 }

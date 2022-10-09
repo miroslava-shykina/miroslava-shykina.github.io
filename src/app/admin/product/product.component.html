@@ -45,7 +45,7 @@
           </div>
         </ng-container>
         <ng-container *ngIf="isUploaded">
-          <img [src]="valueByControl('imgPath')" alt="" height="100px" class="m-3" />
+          <img  [src]="valueByControl('imagePath')"  alt="" width="100px" class="m-3" />
           <button type="button" class="btn-add" (click)="deleteImage()">
             Видалити
           </button>
@@ -84,7 +84,7 @@
         <td>{{ product.weight }}</td>
         <td>{{ product.price }}</td>
         <td>
-          <img [src]="product.imgPath" alt="" height="50px" />
+          <img [src]="product.imagePath" alt="" height="50px" />
         </td>
         <td class="d-flex flex-column">
           <button (click)="editProduct(product)" type="button">

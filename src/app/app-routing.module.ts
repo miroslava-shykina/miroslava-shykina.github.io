@@ -14,12 +14,22 @@ import { ActionComponent } from './admin/action/action.component';
 import { CategoryComponent } from './admin/category/category.component';
 import { ProductComponent } from './admin/product/product.component';
 import { OrdersComponent } from './admin/orders/orders.component';
+import { ProductService } from './shared/services/product/product.service';
+import { ProductInfoResolver } from './shared/services/product/product-info.resolver';
+import { ActionInfoResolver } from './shared/services/action/action-info.resolver';
 
 const routes: Routes = [
   { path: '',  component: HomeComponent },
   { path: 'actions', component: ActionsComponent },
-  { path: 'actions/:id', component: ActionsInfoComponent },
+  { path: 'actions/:id', component: ActionsInfoComponent, resolve: {
+    actionInfo: ActionInfoResolver
+  } },
   { path: 'product-category/:category', component: ProductCategoryComponent },
+  { path: 'product-category/:category/:id', component: ProductInfoComponent, resolve: {
+  productInfo: ProductInfoResolver
+}
+
+},
   { path: 'dostavka-ta-oplata', component: DostavkaTaOplataComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'admin', component: AdminComponent,children: [

@@ -33,10 +33,7 @@ export class CategoryComponent implements OnInit {
     this.categoryForm = this.fb.group({
       name: [null, Validators.required],
       path: [null, Validators.required],
-      imagePath: [
-        'https://monosushi.com.ua/wp-content/uploads/2022/07/rol-tyzhnya-3.0_page-0001-1-scaled-697x379.jpg',
-        Validators.required,
-      ],
+      imagePath: [null, Validators.required],
     });
   }
 
@@ -70,6 +67,7 @@ export class CategoryComponent implements OnInit {
       name: category.name,
       path: category.path,
       imagePath: category.imagePath,
+      
     });
     this.currentCategoryId = category.id;
     this.editStatus = true;
@@ -104,18 +102,22 @@ export class CategoryComponent implements OnInit {
 
   deleteImage(): void {
     this.imageService
-      .deleteuploadFile(this.valueByControl('imagePath'))
+      .deleteUploadFile(this.valueByControl('imagePath'))
       .then(() => {
         this.isUploaded = false;
         this.uploadPercent = 0;
         this.categoryForm.patchValue({ imagePath: null });
       })
       .catch((err) => {
-        console.log('err');
+        console.log(err);
       });
   }
 
+
+  
   adding(): void {
     this.isAddet =!this.isAddet;
-  }
+  if(this.isAddet === true){
+    this.categoryForm.reset();
+  }}
 }

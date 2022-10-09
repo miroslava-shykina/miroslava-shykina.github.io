@@ -28,7 +28,8 @@ export class ProductComponent implements OnInit {
     private fb: FormBuilder,
     private categoryService: CategoryService,
     private productService: ProductService,
-    private imageService: ImageService
+    private imageService: ImageService,
+
   ) {}
 
   ngOnInit(): void {
@@ -45,10 +46,7 @@ export class ProductComponent implements OnInit {
       ingredients: [null, Validators.required],
       weight: [null, Validators.required],
       price: [null, Validators.required],
-      imgPath: [
-        'https://monosushi.com.ua/wp-content/uploads/2022/07/rol-tyzhnya-3.0_page-0001-1-scaled-697x379.jpg',
-        Validators.required,
-      ],
+      imagePath:  [null],
       count: [1],
     });
   }
@@ -96,7 +94,7 @@ export class ProductComponent implements OnInit {
       ingredients: product.ingredients,
       weight: product.weight,
       price: product.price,
-      imgPath: product.imgPath,
+      imagePath: product.imagePath
     });
     this.currentProductId = product.id;
     this.editStatus = true;
@@ -105,45 +103,45 @@ export class ProductComponent implements OnInit {
   }
 
   deleteProduct(product: IProductResponse): void {
-    console.log(product);
     this.productService.delete(product.id).subscribe(() => {
       this.loadProducts();
-    });
+    })
   }
 
   upload(event: any): void {
     const file = event.target.files[0];
-    this.imageService
-      .uploadFile('images', file.name, file)
-      .then((data) => {
+    this.imageService.uploadFile('images', file.name, file)
+      .then(data => {
         this.productForm.patchValue({
-          imgPath: data,
+          imagePath: data
         });
         this.isUploaded = true;
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
-      });
+      })
   }
 
-  valueByControl(control: string): string {
-    return this.productForm.get(control)?.value;
-  }
 
   deleteImage(): void {
-    this.imageService
-      .deleteuploadFile(this.valueByControl('imagePath'))
+    this.imageService.deleteUploadFile(this.valueByControl('imagePath'))
       .then(() => {
         this.isUploaded = false;
         this.uploadPercent = 0;
         this.productForm.patchValue({ imagePath: null });
       })
-      .catch((err) => {
-        console.log('err');
-      });
+      .catch(err => {
+        console.log(err);
+      })
+  }
+  
+  valueByControl(control: string): string {
+    return this.productForm.get(control)?.value;
   }
 
   adding(): void {
     this.isAddet =!this.isAddet;
-  }
+  if(this.isAddet === true){
+    this.productForm.reset();
+  }}
 }

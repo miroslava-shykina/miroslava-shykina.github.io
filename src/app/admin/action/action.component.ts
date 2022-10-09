@@ -111,14 +111,14 @@ export class ActionComponent implements OnInit {
 
   deleteImage(): void {
     this.imageService
-      .deleteuploadFile(this.valueByControl('imagePath'))
+      .deleteUploadFile(this.valueByControl('imagePath'))
       .then(() => {
         this.isUploaded = false;
         this.uploadPercent = 0;
         this.actionForm.patchValue({ imagePath: null });
       })
       .catch((err) => {
-        console.log('err');
+        console.log(err);
       });
   }
 
