@@ -328,3 +328,91 @@
   position: relative;
   cursor: pointer;
 }
+
+//modal-stailes
+
+.modal-content {
+  width: 600px;
+  height: 400px;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 0.6rem;
+  outline: 0;
+}
+
+.btn-close {
+  width: 72em;
+  height: 2em;
+}
+
+.modal {
+  background-color: #00000099;
+}
+
+.modal-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.modal-input {
+  width: 480px;
+  height: 56px;
+}
+
+.modal-dialog {
+  margin: auto;
+  margin-top: 10%;
+}
+
+input {
+  font-size: 17px;
+  height: 56px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  color: #252525;
+  line-height: 56px;
+  padding: 0 20px 0 23px;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+  text-overflow: ellipsis;
+  margin: 10px;
+}
+
+.btn-enter{
+  border: 2px solid #b5d8f7;
+    background: #b5d8f7;
+}
+.btn-enter {
+  font-size: 16px;
+  font-weight: bold;
+  width: 480px;
+  height: 56px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  color: #252525;
+  line-height: 56px;
+  padding: 0 20px 0 23px;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+  text-overflow: ellipsis;
+  margin: 10px;
+}
+
+.btn-enter:active{
+  background-color: white;
+}
+
+.modal-foot{
+  width: 600px;
+  font-size: inherit;
+    line-height: inherit;
+    position: relative;
+    font-weight: bold;
+    color: #b5d8f7;
+    cursor: pointer;
+    white-space: nowrap;
+    -webkit-transition: all 0.35s ease-out;
+    transition: all 0.35s ease-out;
+}

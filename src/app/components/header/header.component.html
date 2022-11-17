@@ -97,14 +97,19 @@
                             Працюємо з <b>11:00</b> до <b>21:30</b>
                         </div>
                     </li>
-                    <li class="user-admin-pages nav-li-border">
-                        <a [routerLink]="['/admin']" routerLinkActive="active">
+                    <li class="user-admin-pages nav-li-border" *ngIf="!isLogin">
+                        <a [routerLink]="['/+auth']" routerLinkActive="active" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">
                             <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg" alt="" />
                         </a>
                     </li>
-                    <li class="header-basket">
+                    <li class="user-admin-pages nav-li-border" *ngIf="isLogin">
+                        <a [routerLink]="['/'+loginUrl]" routerLinkActive="active">
+                            <img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/user.svg"  alt="" />
+                        </a>
+                    </li>
+                    <li [routerLink]="['/basket']" routerLinkActive="active" class="header-basket">
                         <div class="header-basket-count">1</div>
-                        <a href=""><img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/basket.svg"
+                        <a  href=""><img src="https://monosushi.com.ua/wp-content/themes/monosushi/img/basket.svg"
                                 alt="" />
                         </a>
 
@@ -115,3 +120,34 @@
         </div>
     </nav>
 </header>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+        <h5 class="modal-title text-center" id="exampleModalLabel">Вхід в кабінет</h5>
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <form [formGroup]="authForm" (ngSubmit)="login()">
+                    <div class="mb-3">
+                        <input formControlName="email" name="email" type="text" class="form-control modal-input" id="email">
+                      </div>
+                    <div class="mb-3">
+                        <input formControlName="password" name="password" type="password" class="form-control modal-input" id="password">
+                      </div>
+                    <button [disabled]="authForm.invalid" type="submit" class="btn-enter"  data-bs-dismiss="modal">УВІЙТИ В КАБІНЕТ</button>
+                </form>
+            </div>
+        </div>
+        <div class="d-flex justify-content-around modal-foot">
+          <button type="button" class="btn" data-bs-dismiss="modal">Забули пароль?</button>
+          <button type="button" class="btn">Зареєструватись</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+

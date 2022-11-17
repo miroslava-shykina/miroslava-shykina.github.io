@@ -17,27 +17,38 @@ import { OrdersComponent } from './admin/orders/orders.component';
 import { ProductService } from './shared/services/product/product.service';
 import { ProductInfoResolver } from './shared/services/product/product-info.resolver';
 import { ActionInfoResolver } from './shared/services/action/action-info.resolver';
+import { AuthGuard } from './shared/guards/auth/auth.guard';
+import { CabinetComponent } from './pages/cabinet/cabinet.component';
+import { AuthorizationComponent } from './pages/authorization/authorization.component';
+import { BascetComponent } from './pages/bascet/bascet.component';
 
 const routes: Routes = [
-  { path: '',  component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'actions', component: ActionsComponent },
-  { path: 'actions/:id', component: ActionsInfoComponent, resolve: {
-    actionInfo: ActionInfoResolver
-  } },
+  {
+    path: 'actions/:id', component: ActionsInfoComponent, resolve: {
+      actionInfo: ActionInfoResolver
+    }
+  },
   { path: 'product-category/:category', component: ProductCategoryComponent },
-  { path: 'product-category/:category/:id', component: ProductInfoComponent, resolve: {
-  productInfo: ProductInfoResolver
-}
+  {
+    path: 'product-category/:category/:id', component: ProductInfoComponent, resolve: {
+      productInfo: ProductInfoResolver
+    }
 
-},
+  },
+  { path: 'basket', component: BascetComponent},
   { path: 'dostavka-ta-oplata', component: DostavkaTaOplataComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'admin', component: AdminComponent,children: [
+  { path: 'auth', component: AuthorizationComponent},
+  { path: 'cabinet', component: CabinetComponent, canActivate: [AuthGuard] },
+  {
+    path: 'admin', component: AdminComponent, canActivate: [AuthGuard], children: [
       { path: 'action', component: ActionComponent },
       { path: 'category', component: CategoryComponent },
       { path: 'product', component: ProductComponent },
       { path: 'order', component: OrdersComponent },
-      {path: '', pathMatch: 'full', redirectTo: 'action'},
+      { path: '', pathMatch: 'full', redirectTo: 'action' },
     ],
   },
 ];
@@ -46,4 +57,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
+
+

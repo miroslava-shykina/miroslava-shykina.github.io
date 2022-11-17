@@ -1,10 +1,10 @@
 {
   "actions": [
     {
-      "date": "2022-09-17T08:19:04.963Z",
+      "date": "2022-10-18T21:11:28.032Z",
       "name": "Акції",
       "title": "\"4+1=4\"",
-      "description": "\nЗамовляйте 5 ролів, а платіть за 4.\nЗамовляйте 10 ролів, а платіть за 8 і так далі.\nБезкоштовним вважається рол з найменшою вартістю.\nЦя акція не поєднується з іншими акціями.\n",
+      "description": "\nЗамовляйте 5 ролів, а платіть за 4. \nЗамовляйте 10 ролів, а платіть за 8 і так далі.\nБезкоштовним вважається рол з найменшою вартістю.\nЦя акція не поєднується з іншими акціями.\n",
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fpyatyj-v-podarunok-4.0_page-0001-scaled-697x379.jpg?alt=media&token=f4ba63af-1e0d-47a4-82da-eec6e13bcc79",
       "id": 2
     },
@@ -123,6 +123,28 @@
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-14960.appspot.com/o/images%2Fsousi.jpg?alt=media&token=5050e969-b990-4e8c-b794-5c68afcb337a",
       "count": null,
       "id": 4
+    }
+  ],
+  "auth":[
+    {
+      "id": 1,
+      "email": "admin@gmail.com",
+      "pasword": "qwerty123",
+      "FirstName": "Petro",
+      "LastLame": "Petriv",
+      "phoneNumber": "0936542269",
+      "role": "ADMIN"
+
+    },
+    {
+      "id": 2,
+      "email": "user@gmail.com",
+      "pasword": "qwerty123",
+      "FirstName": "Pavlo",
+      "LastLame": "Pavliv",
+      "phoneNumber": "0936542269",
+      "role": "USER"
+
     }
   ]
 }

@@ -24,6 +24,9 @@ import { OrdersComponent } from './admin/orders/orders.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { AuthorizationComponent } from './pages/authorization/authorization.component';
+import { CabinetComponent } from './pages/cabinet/cabinet.component';
+import { BascetComponent } from './pages/bascet/bascet.component';
 
 
 @NgModule({
@@ -42,7 +45,10 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     AdminComponent,
     CategoryComponent,
     ProductComponent,
-    OrdersComponent
+    OrdersComponent,
+    AuthorizationComponent,
+    CabinetComponent,
+    BascetComponent
   ],
   imports: [
     BrowserModule,

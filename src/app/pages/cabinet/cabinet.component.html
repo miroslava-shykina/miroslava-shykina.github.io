@@ -1,0 +1,54 @@
+<div class="contaner-fluid d-flex justify-content-center">
+    <div class="d-flex user-menu">
+        <div class="nav flex-column nav-pills me-3 admin" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button [routerLink]="['action']" routerLinkActive="active" class="nav-link active" type="button">
+                Особисті дані
+            </button>
+            <button [routerLink]="['category']" routerLinkActive="active" class="nav-link" type="button">
+                Історія замовлень
+            </button>
+            <button [routerLink]="['product']" routerLinkActive="active" class="nav-link" type="button">
+                Зміна пароля
+            </button>
+            <div class="mb-3"></div>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+    <div class="user-info">
+        <div class="d-flex mb-3 p-3">
+            <div class="block me-2">1</div>
+            <h5 class="text-start fw-bold" id="exampleModalLabel">Особисті дані</h5>
+        </div>
+        <div class="row mb-4">
+            <div class="d-flex justify-content-center">
+                <form>
+                    <div class="d-flex">
+                        <input formControlName="text" name="name" type="text" class="form-control input name" />
+                        <input formControlName="text" name="name" type="text" class="form-control input name" />
+                    </div>
+                    <div class="mb-3">
+                        <input formControlName="tel-num" name="tel-num" type="tel" class="form-control input"
+                            id="tel-num" />
+                    </div>
+                    <div class="mb-3">
+                        <input formControlName="email" name="email" type="text" class="form-control input" id="email" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="d-flex  p-3">
+            <div class="block me-2">1</div>
+            <h5 class="text-start fw-bold" id="exampleModalLabel">Адреси</h5>
+        </div>
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <form>
+                    <div class="d-flex mb-4">
+                        <input type="button" class="input name btn-add fw-bold" value="ДОДАТИ АДРЕСУ"/>
+                        <input (click)="logout()" type="button" class="input name btn-save fw-bold" value="ЗБЕРЕГТИ ЗМІНИ"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

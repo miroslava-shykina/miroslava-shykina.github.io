@@ -13,7 +13,7 @@
             <button [routerLink]="['order']" routerLinkActive="active" class="nav-link" type="button">
                 Замовлення
             </button>
-            <input type="button" value="ВИХІД" class="mb-5" />
+            <input (click)="logout()"  type="button"  value="ВИХІД" class="mb-5" />
         </div>
         <div class="tab-content w-100" id="v-pills-tabContent">
             <router-outlet></router-outlet>

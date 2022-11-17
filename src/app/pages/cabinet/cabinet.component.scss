@@ -1,0 +1,92 @@
+@import "../../shared/styles/variables";
+
+.user-menu{
+  margin-right: 45px;
+}
+.admin {
+    margin-top: 160px;
+  }
+  
+  button {
+    width: 190px;
+    height: 65px;
+    border-bottom: 1px solid lightgray !important;
+    border-top: 1px solid lightgray !important;
+    border-right: 1px solid lightgray !important;
+    background: white !important;
+    color: gray !important;
+    border-radius: 0px !important;
+    margin-left: 15px;
+  }
+  
+  .active, button:hover {
+    
+    border-top: 4px solid #b5d8f7 !important;
+    border-right: 1px solid white !important;
+    color: black !important;
+    font-weight: bold;
+  }
+  
+  button:focus-visible {
+    outline: none;
+  }
+  
+  .user-info{
+   margin-top: 145px;
+  }
+
+  
+.input {
+  width: 608px;
+  font-size: 17px;
+  height: 56px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  color: #252525;
+  line-height: 56px;
+  padding: 0 20px 0 23px;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+  text-overflow: ellipsis;
+  margin: 10px;
+}
+
+.name{
+  width: 294px;
+}
+
+.block{
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: $primary;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.btn-add{
+  background-color:white;
+  border: 2px solid $primary;
+}
+
+.btn-save{
+  background-color: $primary;
+  border: 2px solid $primary;
+}
+
+
+.btn-add:active{
+  background-color:$primary;
+  border: 2px solid $primary;
+}
+
+.btn-save:active{
+  background-color: white;
+  border: 2px solid $primary;
+}
+
+
+
+  
+  
